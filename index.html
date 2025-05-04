@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Warning</title>
+    <style>
+        @keyframes blink {
+            25% {
+                color: red;
+                text-shadow: 5px 5px 10px red, -5px -5px 10px red;
+                border: 2px dashed red;
+            }
+            50% {
+                color: black;
+                text-shadow: 0px 0px 0px black, 0px 0px 0px black;
+                border: 2px dashed black;
+            }
+            75% {
+                color: red;
+                text-shadow: 5px 5px 10px red, -5px -5px 10px red;
+                border: 2px dashed red;
+            }
+            100% {
+                color: black;
+                text-shadow: 0px 0px 0px black, 0px 0px 0px black;
+                border: 2px dashed black;
+            }
+        }
+
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            text-shadow: 5px 5px 10px lime, -5px -5px 10px lime;
+            text-align: center;
+        }
+
+        div {
+            border: 2px dashed red;
+            color: red;
+            text-shadow: 5px 5px 10px red, -5px -5px 10px red;
+            animation: blink 2s infinite;
+        }
+        #p {
+            color: yellow;
+            text-shadow: 5px 5px 10px yellow, -5px -5px 10px yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="H" >Hacked Software</h1>
+    <p>This software has already been hacked by<br>an unknown identity. Now you can't use<br>its services.</p>
+    <div>
+        <p>Warning Alert!!</p>
+        <p>Your Password, Mobile details have been<br>caught by an unknown tracker.</p>
+        <p>Your Device is catching some Malware.</p>
+        <p>Permission granted, Data Corrupted.</p>
+    </div>
+    <p onclick="getPassword()" id="p">Learn more...</p>
+    <script>
+        function Back() {
+            let body = document.body;
+            body.innerHTML =
+                "<h1 id=\"H\" >Hacked Software</h1> <br>" +
+                "<p>This software has already been hacked by<br>an unknown identity. Now you can't use<br>its services.</p>" +
+                "<div>" +
+                "<p>Warning Alert!!</p>" +
+                "<p>Your Password, Mobile details have been<br>caught by an unknown tracker.</p>" +
+                "<p>Your Device is catching some Malware.</p>" +
+                "<p>Permission granted, Data Corrupted.</p>" +
+                "</div>" +
+                "<p onclick=\"getPassword()\" id=\"p\">Learn more...</p>";
+        }
+
+        function getPassword() {
+
+            let body = document.body;
+            body.innerHTML =
+                "<h1 id=\"H\" >Hacked Software</h1> <br>" +
+                "<p onclick=\"Back()\" id=\"p\">Go Back</p>"
+
+            let Joke = "Haha! I am just kidding. This is a prank page.<br>Don't worry, your data is safe. :)";
+            let label = document.getElementById("H");
+            label.innerHTML = Joke;
+
+        }
+    </script>
+</body>
+</html>
